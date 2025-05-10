@@ -1,7 +1,14 @@
-import LoginImage from "./assets/logistics-animate.svg";
-import Button from "./components/Button/Button";
+import { useNavigate } from "react-router-dom";
+import LoginImage from "../assets/logistics-animate.svg";
+import Button from "../components/Button/Button";
 
-function App() {
+function LoginPage() {
+  let navigate = useNavigate();
+
+  function handleSubmit() {
+    navigate("/transactions");
+  }
+
   return (
     // Container
     <main className="w-full h-screen flex">
@@ -88,7 +95,7 @@ function App() {
             </div>
 
             {/* Botão */}
-            <Button>Sign In</Button>
+            <Button onClick={handleSubmit}>Sign In</Button>
           </main>
         </form>
       </div>
@@ -96,4 +103,4 @@ function App() {
   );
 }
 
-export default App;
+export default LoginPage;
